@@ -262,7 +262,7 @@ module Fluent::Plugin
     def processSectionK(section)
       if section =~ /.+/
         # convert to array
-        matchedRules_array = section.split(/\n/)
+        matchedRules_array = section.split(/\n/).reject {|m| m.empty?}
 
         secRuleIds = Array.new
 
